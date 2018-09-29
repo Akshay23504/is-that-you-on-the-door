@@ -1,4 +1,4 @@
-### Is that you on the door? - A Biometrics Project
+### Is That You On The Door? - A Biometrics Project
 
 Coming soon...
 
