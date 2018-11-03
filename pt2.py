@@ -1,8 +1,8 @@
-import csv
 import numpy as np
-from statsmodels import robust
-import scipy.stats as scs
 import pandas as pd
+import scipy.stats as scs
+from statsmodels import robust
+
 import pt1
 
 
@@ -51,9 +51,10 @@ class Feature:
         self.feature_list.append(max(values) - min(values))
 
     def feature_auto_correlation(self, values):
-        # self.feature_list.append(pd.Series.autocorr(values))
-        # TODO: This ain't working
-        self.feature_list.append(0)
+        # result = np.correlate(values, values, mode='full')
+        # self.feature_list.append(result[int(result.size / 2):])
+        result = pd.Series(values)
+        self.feature_list.append(pd.Series.autocorr(result))
 
     def feature_kurtosis(self, values):
         self.feature_list.append(scs.kurtosis(values))
