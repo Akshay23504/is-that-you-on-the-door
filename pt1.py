@@ -96,6 +96,9 @@ class PreProcess:
                 for e in self.entries[entry]:
                     csv.writer(o_file).writerows(self.entries[entry][e])
 
+    def get_door_instance_dimension(self):
+        return self.door_instance_dimension
+
 
 # pre_process = PreProcess()
 #

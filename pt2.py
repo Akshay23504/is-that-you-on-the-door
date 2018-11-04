@@ -92,7 +92,8 @@ class Feature:
 
     def write_features_to_file(self):
         self.some_pre_processing()
-        for k, v in self.pre_process.door_instance_dimension.items():
+        door_instance_dimension = self.pre_process.get_door_instance_dimension()
+        for k, v in door_instance_dimension.items():
             data_frame = self.df
             single_row_values = []
             for ks, vs in v.items():
