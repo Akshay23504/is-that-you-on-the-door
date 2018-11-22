@@ -13,8 +13,8 @@ def convert_epoch_to_datetime(time_in_epoch):
 
 class PreProcess:
     def __init__(self):
-        self.user_id = "995"
-        self.sensor_name = "gyroscope"
+        self.user_id = "998"
+        self.sensor_name = "gyroscope"  # gyroscope or accelerometer
         self.path = "../Dataset/Sample/watchtrial/" + self.user_id + "/"
         self.filename = self.user_id + "_" + self.sensor_name + ".xlsx"
         self.filename_checkpoint = "Events" + self.user_id + ".txt"
