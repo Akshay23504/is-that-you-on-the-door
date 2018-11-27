@@ -13,7 +13,7 @@ class FeatureReductionPart2:
         self.train_features_data_frame = pd.DataFrame()
         self.test_features_data_frame = pd.DataFrame()
         self.sensor_name = "sensor"  # accelerometer or gyroscope or sensor
-        self.door_number = str(2)  # 1 or 2
+        self.door_number = str(1)  # 1 or 2
         self.path_merged = "../Dataset/Sample/watchtrial/merged/"
         self.train_filename = "door_" + self.door_number + "_" + self.sensor_name + "_features_train.xlsx"
         self.test_filename = "door_" + self.door_number + "_" + self.sensor_name + "_features_test.xlsx"
@@ -59,10 +59,11 @@ class FeatureReductionPart2:
         self.y_test = test_data[:, -1:]
 
         # To delete one column
-        column_index = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]
-        # column_index = [0]
+        # column_index = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]
+        column_index = [26]
         self.X_train = np.delete(self.X_train, column_index, axis=1)
         self.X_test = np.delete(self.X_test, column_index, axis=1)
+        # print(self.X_train.shape)
 
 
 feature_reduction_part2 = FeatureReductionPart2()
