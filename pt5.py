@@ -8,7 +8,6 @@ from sklearn.naive_bayes import GaussianNB
 
 
 class FeatureReductionPart2:
-    # TODO: Comments
     def __init__(self):
         self.train_features_data_frame = pd.DataFrame()
         self.test_features_data_frame = pd.DataFrame()
@@ -59,11 +58,13 @@ class FeatureReductionPart2:
         self.y_test = test_data[:, -1:]
 
         # To delete one column
+        # column_index = [0, 1, 3, 6, 7, 9, 10, 11, 13, 14, 17, 18, 22, 23, 24, 20]  # Door 1. Do not remove
+        column_index = [0, 1, 2, 3, 5, 6, 8, 10, 12, 16, 17, 18, 19, 20, 22, 25, 26]  # Door 2. Do not remove
         # column_index = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]
-        column_index = [26]
+        # column_index = []
         self.X_train = np.delete(self.X_train, column_index, axis=1)
         self.X_test = np.delete(self.X_test, column_index, axis=1)
-        # print(self.X_train.shape)
+        print(self.X_train.shape)
 
 
 feature_reduction_part2 = FeatureReductionPart2()

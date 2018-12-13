@@ -21,7 +21,7 @@ class FeatureReduction:
         plt.pcolor(correlation_matrix, edgecolors='k', cmap='hot')
         plt.xticks(np.arange(0.5, len(correlation_matrix.columns), 1), correlation_matrix.columns, rotation=90)
         plt.yticks(np.arange(0.5, len(correlation_matrix.index), 1), correlation_matrix.index)
-        # plt.show()
+        plt.show()
         for i in range(len(correlation_matrix.columns)):
             for j in range(i):
                 if correlation_matrix.iloc[i, j] >= self.threshold:

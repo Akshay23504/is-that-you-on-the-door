@@ -7,18 +7,17 @@ import pt1
 
 
 class Feature:
-
     def __init__(self, pre_process):
         self.feature_list = []
         self.label_list = ["Mean_x", "Median_x", "Variance_x", "Standard Deviance_x", "Median Absolute Deviation_x",
                            "Interquartile Range_x", "Power_x", "Energy_x", "Peak-to-Peak Amplitude_x",
-                           "Auto Correlation_x", "Kurtosis_x", "Skew_x", "Entropy_x",
+                           "Auto Correlation_x", "Kurtosis_x", "Skew_x",
                            "Mean_y", "Median_y", "Variance_y", "Standard Deviance_y", "Median Absolute Deviation_y",
                            "Interquartile Range_y", "Power_y", "Energy_y", "Peak-to-Peak Amplitude_y",
-                           "Auto Correlation_y", "Kurtosis_y", "Skew_y", "Entropy_y",
+                           "Auto Correlation_y", "Kurtosis_y", "Skew_y",
                            "Mean_z", "Median_z", "Variance_z", "Standard Deviance_z", "Median Absolute Deviation_z",
                            "Interquartile Range_z", "Power_z", "Energy_z", "Peak-to-Peak Amplitude_z",
-                           "Auto Correlation_z", "Kurtosis_z", "Skew_z", "Entropy_z"
+                           "Auto Correlation_z", "Kurtosis_z", "Skew_z"
                            ]
         self.pre_process = pre_process
         self.df = pd.DataFrame(columns=self.label_list)
@@ -62,9 +61,6 @@ class Feature:
     def feature_skew(self, values):
         self.feature_list.append(scs.skew(values))
 
-    def feature_entropy(self, values):
-        self.feature_list.append(scs.entropy(values))
-
     def get_me_all_features(self, values):
         self.feature_mean(values)
         self.feature_median(values)
@@ -78,7 +74,6 @@ class Feature:
         self.feature_auto_correlation(values)
         self.feature_kurtosis(values)
         self.feature_skew(values)
-        self.feature_entropy(values)
 
     def some_pre_processing(self):
         self.pre_process.store_checkpoints()
